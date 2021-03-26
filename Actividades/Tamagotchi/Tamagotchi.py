@@ -46,12 +46,12 @@ class Tamagotchi:
                 return print("El " + self.getNombre() + " sigue con hambre")
 
     def acariciar(self):
-        print("Estado de " + self.getNombre() + " es de " + self.getEstado())
+        print("Estado de " + self.getNombre() + " es " + self.getEstado()+". Energia: "+str(self.getEnergia())+". Hambre: "+str(self.getHambre()))
         self.setEstado("content")
 
     def jugar(self):
         if self.__energia <= 2 or self.__hambre >= 2:
-            print(self.getNombre() + " no quiere jugar. Energia: " + self.getEnergia() + " hambre: " + self.getHambre())
+            print(self.getNombre() + " no quiere jugar. Energia: " + str(self.getEnergia()) + " hambre: " + str(self.getHambre()))
         elif self.__estado == "content":
             self.setEnergia(self.__energia-1)
             self.setHambre(self.__hambre+1)
@@ -68,3 +68,5 @@ class Tamagotchi:
             return print(self.getNombre() + " a dormido")
         else:
             return print(self.getNombre() + " no ha dormido")
+
+
